@@ -1,4 +1,6 @@
-###　 Next.js プロジェクトの作成
+## 環境構築手順
+
+### Next.js プロジェクトの作成
 
 ```
 yarn create next-app app --typescript
