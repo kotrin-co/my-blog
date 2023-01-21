@@ -1,4 +1,4 @@
-import type { NextPage, GetStaticProps, GetStaticPaths } from 'next'
+import type { GetStaticPaths } from 'next'
 import Head from 'next/head'
 import { Profile } from '@/components/Profile'
 import { Category } from '@/components/Category'
@@ -32,6 +32,8 @@ const postDetailPage = ({ post }: PageProps) => {
               )}
 
               <h1 className="text-4xl leading-10 font-extrabold text-gray-800">{post.title}</h1>
+
+              <div className="text-right text-xl">{formatDateToHumanReadable(post.publishedAt)}</div>
 
               <div className="py-8" dangerouslySetInnerHTML={{ __html: post.body }}></div>
             </article>
