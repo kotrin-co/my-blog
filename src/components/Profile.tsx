@@ -4,7 +4,7 @@ import { BsTwitter, BsGithub } from 'react-icons/bs'
 
 export const Profile = () => {
   return (
-    <div className="rounded overflow-hidden shadow-lg h-[95vh]">
+    <div className="rounded overflow-hidden shadow-lg pb-5">
       <div className="h-12 bg-indigo-500 text-white flex items-center justify-center text-xl">Profile</div>
       <div className="flex justify-center py-5">
         <img src="/profile.jpg" alt="プロフィール画像" className="w-[100px] h-[100px] rounded-full object-contain" />
