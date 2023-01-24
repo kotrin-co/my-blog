@@ -23,15 +23,20 @@ const postDetailPage = ({ post }: PageProps) => {
         <div className="col-span-3 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-5">
           <div className="col-span-2 px-4">
             <article className="prose max-w-none">
-              {'category' in post && (
-                <div className="inline-block mb-6">
-                  <div className="ml-5 mt-5 bg-yellow-400 px-4 py-1 rounded-3xl text-white text-base leading-6 font-bold">
-                    {post.category}
-                  </div>
+              {'categories' in post && (
+                <div className="flex">
+                  {post.categories.map((category, index) => (
+                    <div
+                      className="ml-2 mt-5 bg-yellow-400 px-4 py-1 rounded-3xl text-white text-base leading-6 font-bold"
+                      key={index}
+                    >
+                      {category}
+                    </div>
+                  ))}
                 </div>
               )}
 
-              <h1 className="text-4xl leading-10 font-extrabold text-gray-800">{post.title}</h1>
+              <h1 className="text-4xl mt-5 leading-10 font-extrabold text-gray-800">{post.title}</h1>
 
               <div className="text-right text-xl">{formatDateToHumanReadable(post.publishedAt)}</div>
 
@@ -41,7 +46,6 @@ const postDetailPage = ({ post }: PageProps) => {
         </div>
         <div className="col-span-1">
           <Profile />
-          <Category />
         </div>
       </div>
     </div>
@@ -71,7 +75,7 @@ export const getStaticPaths: GetStaticPaths<UrlParams> = async () => {
 export const getStaticProps = async (context: any) => {
   const id = context.params.id
   const data = await client.get({ endpoint: 'blogs', contentId: id })
-
+  console.log('data', data.contents)
   return {
     props: {
       post: data,
