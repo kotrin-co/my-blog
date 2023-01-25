@@ -11,5 +11,5 @@ export type Post = {
     height: number
     width: number
   }
-  category: string
+  categories: string[]
 }

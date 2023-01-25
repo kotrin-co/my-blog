@@ -1,8 +1,8 @@
-import { MdPlayArrow } from 'react-icons/md'
+import { MdKeyboardArrowRight } from 'react-icons/md'
 
-export const Category = () => {
+export const Category = ({ filter }: any) => {
   const CATEGORIES = [
-    'LINE API',
+    'LINE',
     'React',
     'Next.js',
     'Vue.js',
@@ -21,9 +21,13 @@ export const Category = () => {
 
       <ul>
         {CATEGORIES.map((category, index) => (
-          <li key={index} className="flex items-center py-3 hover:bg-indigo-50 hover:cursor-pointer">
-            <MdPlayArrow className="ml-3" />
-            <div className="ml-[10px] text-lg leading-6 font-semibold ">{category}</div>
+          <li
+            key={index}
+            className="flex items-center py-3 hover:bg-indigo-50 hover:cursor-pointer"
+            onClick={() => filter(category)}
+          >
+            <MdKeyboardArrowRight />
+            <div className="ml-[10px] text-lg leading-6 font-semibold">{category}</div>
           </li>
         ))}
       </ul>

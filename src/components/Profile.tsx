@@ -1,6 +1,5 @@
 import Link from 'next/link'
-import { IconContext } from 'react-icons'
-import { BsTwitter, BsGithub } from 'react-icons/bs'
+import { FaTwitter } from 'react-icons/fa'
 
 export const Profile = () => {
   return (
@@ -46,17 +45,7 @@ export const Profile = () => {
       <div className="flex justify-center mt-4">
         <Link href="https://twitter.com/ponnzineer?t=g4MCAlmXulMMrqCOC5cQNA&s=03">
           <a className="text-3xl px-5">
-            <IconContext.Provider value={{ color: '#555' }}>
-              <BsTwitter />
-            </IconContext.Provider>
-          </a>
-        </Link>
-
-        <Link href="https://github.com/kotrin-co">
-          <a className="text-3xl px-5">
-            <IconContext.Provider value={{ color: '#555' }}>
-              <BsGithub />
-            </IconContext.Provider>
+            <FaTwitter />
           </a>
         </Link>
       </div>
