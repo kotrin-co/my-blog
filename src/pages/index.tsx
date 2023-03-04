@@ -6,6 +6,7 @@ import { Category } from '@/components/Category'
 import { Header } from '@/components/Header'
 import { formatDateToHumanReadable } from '@/utils/day.util'
 import Link from 'next/link'
+import Head from 'next/head'
 
 type Props = {
   posts: Array<Post>
@@ -20,6 +21,13 @@ export default function IndexPage({ posts }: Props) {
 
   return (
     <>
+      <Head>
+        <title>Kenの技術ブログ</title>
+        <meta
+          name="description"
+          content="Web開発の技術情報をアウトプットしていきます。本ブログを通して、課題を抱える方のお役に立てれば幸いです。"
+        />
+      </Head>
       <Header />
       <h1 className="container mx-auto px-10 pt-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3">
         記事一覧
